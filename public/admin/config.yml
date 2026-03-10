@@ -1,0 +1,292 @@
+# =============================================================================
+# Decap CMS Configuration - Del Campo Coopman
+# =============================================================================
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Crear {{collection}} → {{slug}}"
+    update: "Actualizar {{collection}} → {{slug}}"
+    delete: "Eliminar {{collection}} → {{slug}}"
+    uploadMedia: "Subir media → {{path}}"
+    deleteMedia: "Eliminar media → {{path}}"
+
+# Habilitar local_backend solo en desarrollo (npx decap-server)
+local_backend: true
+
+# Configuración de medios
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Configuración del sitio
+site_url: https://delcampocoopman.cl
+display_url: https://delcampocoopman.cl
+logo_url: /images/logo.svg
+
+# Idioma del CMS
+locale: "es"
+
+# Slug configuration
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# =============================================================================
+# COLECCIONES
+# =============================================================================
+
+collections:
+  # ---------------------------------------------------------------------------
+  # INSIGHTS (Artículos del Blog)
+  # ---------------------------------------------------------------------------
+  - name: "insights"
+    label: "Insights"
+    label_singular: "Insight"
+    description: "Artículos legales y publicaciones del blog"
+    folder: "src/content/insights"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Penal Económico"
+        field: category
+        pattern: "Penal Económico"
+      - label: "Laboral"
+        field: category
+        pattern: "Laboral"
+      - label: "Compliance"
+        field: category
+        pattern: "Compliance"
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        hint: "Título del artículo (máx. 70 caracteres recomendado)"
+
+      - label: "Fecha de Publicación"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Compliance", value: "Compliance" }
+          - { label: "Penal Económico", value: "Penal Económico" }
+          - { label: "Laboral", value: "Laboral" }
+          - { label: "Regulatorio", value: "Regulatorio" }
+          - { label: "Corporativo", value: "Corporativo" }
+          - { label: "Tributario", value: "Tributario" }
+
+      - label: "Descripción"
+        name: "description"
+        widget: "text"
+        hint: "Resumen breve del artículo (máx. 160 caracteres para SEO)"
+
+      - label: "Imagen Destacada"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Imagen principal del artículo (opcional)"
+
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        hint: "Cuerpo del artículo en formato Markdown"
+
+  # ---------------------------------------------------------------------------
+  # TESTIMONIOS
+  # ---------------------------------------------------------------------------
+  - name: "testimonials"
+    label: "Testimonios"
+    label_singular: "Testimonio"
+    description: "Testimonios de clientes satisfechos"
+    folder: "src/content/testimonials"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Nombre del Cliente"
+        name: "author"
+        widget: "string"
+        hint: "Nombre completo del cliente"
+
+      - label: "Cargo / Empresa"
+        name: "position"
+        widget: "string"
+        hint: "Ej: CEO, Empresa ABC"
+
+      - label: "Testimonio"
+        name: "quote"
+        widget: "text"
+        hint: "El testimonio del cliente"
+
+      - label: "Foto del Cliente"
+        name: "avatar"
+        widget: "image"
+        required: false
+        hint: "Foto del cliente (opcional)"
+
+      - label: "Destacado"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Mostrar en la página principal"
+
+      - name: "body"
+        widget: "hidden"
+        default: ""
+
+  # ---------------------------------------------------------------------------
+  # CLIENTES (Logos)
+  # ---------------------------------------------------------------------------
+  - name: "clients"
+    label: "Clientes"
+    label_singular: "Cliente"
+    description: "Logos de empresas clientes para el carrusel"
+    folder: "src/content/clients"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Nombre de la Empresa"
+        name: "name"
+        widget: "string"
+
+      - label: "Logo"
+        name: "logo"
+        widget: "image"
+        hint: "Logo de la empresa (preferible PNG con fondo transparente)"
+
+      - label: "Sitio Web"
+        name: "website"
+        widget: "string"
+        required: false
+        hint: "URL del sitio web del cliente (opcional)"
+
+      - label: "Orden"
+        name: "order"
+        widget: "number"
+        default: 0
+        hint: "Orden de aparición (menor número = primero)"
+
+      - name: "body"
+        widget: "hidden"
+        default: ""
+
+  # ---------------------------------------------------------------------------
+  # EQUIPO (Miembros del equipo)
+  # ---------------------------------------------------------------------------
+  - name: "team"
+    label: "Equipo"
+    label_singular: "Miembro"
+    description: "Miembros del equipo de la firma"
+    folder: "src/content/team"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Nombre Completo"
+        name: "name"
+        widget: "string"
+
+      - label: "Cargo"
+        name: "role"
+        widget: "string"
+        hint: "Ej: Abogado Senior, Director, etc."
+
+      - label: "Foto"
+        name: "photo"
+        widget: "image"
+        required: false
+
+      - label: "Biografía"
+        name: "bio"
+        widget: "text"
+        hint: "Descripción breve del profesional"
+
+      - label: "Email"
+        name: "email"
+        widget: "string"
+        required: false
+
+      - label: "LinkedIn"
+        name: "linkedin"
+        widget: "string"
+        required: false
+        hint: "URL del perfil de LinkedIn"
+
+      - label: "Orden"
+        name: "order"
+        widget: "number"
+        default: 0
+
+      - name: "body"
+        widget: "hidden"
+        default: ""
+
+  # ---------------------------------------------------------------------------
+  # CONFIGURACIÓN DEL SITIO
+  # ---------------------------------------------------------------------------
+  - name: "settings"
+    label: "Configuración"
+    description: "Configuración general del sitio"
+    files:
+      - name: "general"
+        label: "General"
+        file: "src/content/settings/general.json"
+        fields:
+          - label: "Nombre del Sitio"
+            name: "siteName"
+            widget: "string"
+            default: "Del Campo Coopman"
+
+          - label: "Descripción"
+            name: "siteDescription"
+            widget: "text"
+
+          - label: "Email de Contacto"
+            name: "email"
+            widget: "string"
+
+          - label: "Teléfono"
+            name: "phone"
+            widget: "string"
+
+          - label: "WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            hint: "Número con código de país, sin espacios ni guiones"
+
+          - label: "Dirección"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Calle", name: "street", widget: "string" }
+              - { label: "Ciudad", name: "city", widget: "string" }
+              - { label: "Región", name: "region", widget: "string" }
+
+      - name: "social"
+        label: "Redes Sociales"
+        file: "src/content/settings/social.json"
+        fields:
+          - label: "LinkedIn"
+            name: "linkedin"
+            widget: "string"
+            required: false
+
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            required: false
+
+          - label: "Twitter / X"
+            name: "twitter"
+            widget: "string"
+            required: false

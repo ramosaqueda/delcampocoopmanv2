@@ -1,5 +1,7 @@
 ---
+import { getCollection } from "astro:content";
 
+const insights = await getCollection("insights");
 ---
 
 <section class="relative py-20 overflow-hidden">
@@ -127,88 +129,38 @@
       </h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article
-        class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer"
-      >
-        <div class="p-8 flex flex-col h-full">
-          <div class="flex items-center justify-between mb-6">
-            <span
-              class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase"
-              >Laboral</span
-            >
-            <span class="text-slate-500 text-xs font-medium">12 Oct, 2023</span>
-          </div>
-          <h3
-            class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors"
-          >
-            Implementación Ley Karin: Desafíos para el compliance corporativo
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
-            Análisis detallado sobre las nuevas exigencias en materia de
-            prevención del acoso laboral y sexual en las empresas, y cómo
-            adaptar sus reglamentos internos.
-          </p>
-          <div
-            class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
-          >
-            Leer análisis
-          </div>
-        </div>
-      </article>
-      <article
-        class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer"
-      >
-        <div class="p-8 flex flex-col h-full">
-          <div class="flex items-center justify-between mb-6">
-            <span
-              class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase"
-              >Penal Económico</span
-            >
-            <span class="text-slate-500 text-xs font-medium">28 Sep, 2023</span>
-          </div>
-          <h3
-            class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors"
-          >
-            Ley de Delitos Económicos y Medioambientales
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
-            Impacto de la sistematización de los delitos económicos en la
-            responsabilidad penal de las personas jurídicas y sus directivos.
-          </p>
-          <div
-            class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
-          >
-            Leer análisis
-          </div>
-        </div>
-      </article>
-      <article
-        class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer"
-      >
-        <div class="p-8 flex flex-col h-full">
-          <div class="flex items-center justify-between mb-6">
-            <span
-              class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase"
-              >Regulatorio</span
-            >
-            <span class="text-slate-500 text-xs font-medium">15 Sep, 2023</span>
-          </div>
-          <h3
-            class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors"
-          >
-            Nuevas normativas FinTech en Chile
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
-            Exploramos el marco regulatorio emergente para las empresas de
-            tecnología financiera y los requisitos de capital y gobernanza.
-          </p>
-          <div
-            class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
-          >
-            Leer análisis
-          </div>
-        </div>
-      </article>
+      {
+        insights.map((insight) => (
+          <article class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer">
+            <div class="p-8 flex flex-col h-full">
+              <div class="flex items-center justify-between mb-6">
+                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
+                  {insight.data.category}
+                </span>
+                <span class="text-slate-500 text-xs font-medium">
+                  {insight.data.date.toLocaleDateString("es-CL", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
+                {insight.data.title}
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
+                {insight.data.description}
+              </p>
+              <a
+                href={`/insights/${insight.slug}`}
+                class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
+              >
+                Leer análisis
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>

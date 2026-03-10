@@ -33,3 +33,70 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #d4a411;
 }
+
+/* Scroll animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate].animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays for children */
+[data-animate-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-animate-stagger].animate-in > *:nth-child(1) { transition-delay: 0.1s; }
+[data-animate-stagger].animate-in > *:nth-child(2) { transition-delay: 0.2s; }
+[data-animate-stagger].animate-in > *:nth-child(3) { transition-delay: 0.3s; }
+[data-animate-stagger].animate-in > *:nth-child(4) { transition-delay: 0.4s; }
+[data-animate-stagger].animate-in > *:nth-child(5) { transition-delay: 0.5s; }
+
+[data-animate-stagger].animate-in > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade in from left */
+[data-animate="fade-left"] {
+  transform: translateX(-30px);
+}
+
+[data-animate="fade-left"].animate-in {
+  transform: translateX(0);
+}
+
+/* Fade in from right */
+[data-animate="fade-right"] {
+  transform: translateX(30px);
+}
+
+[data-animate="fade-right"].animate-in {
+  transform: translateX(0);
+}
+
+/* Scale up animation */
+[data-animate="scale"] {
+  transform: scale(0.95);
+}
+
+[data-animate="scale"].animate-in {
+  transform: scale(1);
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate-stagger] > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

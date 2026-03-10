@@ -1,0 +1,81 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+    const insights = await getCollection("insights");
+    return insights.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+    <Header />
+
+    <article class="pt-32 pb-20 bg-background-dark min-h-screen">
+        <div class="layout-container px-6 md:px-10 max-w-[900px] mx-auto">
+            {/* Breadcrumb / Back Link */}
+            <a
+                href="/#insights"
+                class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors mb-12 group"
+            >
+                <span
+                    class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform"
+                    >arrow_back</span
+                >
+                <span class="text-sm font-bold uppercase tracking-wider"
+                    >Volver a Insights</span
+                >
+            </a>
+
+            {/* Header */}
+            <header class="mb-16 text-center">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <span
+                        class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                    >
+                        {entry.data.category}
+                    </span>
+                    <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                    <span class="text-slate-400 text-sm font-medium">
+                        {
+                            entry.data.date.toLocaleDateString("es-CL", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })
+                        }
+                    </span>
+                </div>
+
+                <h1
+                    class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8"
+                >
+                    {entry.data.title}
+                </h1>
+
+                <p
+                    class="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto"
+                >
+                    {entry.data.description}
+                </p>
+            </header>
+
+            {/* Content */}
+            <div
+                class="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-p:text-slate-100 prose-a:text-primary hover:prose-a:text-white prose-strong:text-white prose-li:text-slate-100"
+            >
+                <Content />
+            </div>
+        </div>
+    </article>
+
+    <Footer />
+</Layout>

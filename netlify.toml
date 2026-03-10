@@ -1,0 +1,118 @@
+# =============================================================================
+# Netlify Configuration - Del Campo Coopman
+# =============================================================================
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# =============================================================================
+# NETLIFY IDENTITY (para CMS)
+# =============================================================================
+
+[identity]
+  # Invitar usuarios por email (sin registro público)
+  # Se configura en Netlify Dashboard > Identity > Registration
+
+# =============================================================================
+# GIT GATEWAY (backend para Decap CMS)
+# =============================================================================
+
+[git_gateway]
+  # Habilitar Git Gateway para que el CMS pueda escribir al repo
+  # Se configura en Netlify Dashboard > Identity > Services > Git Gateway
+
+# =============================================================================
+# REDIRECTS
+# =============================================================================
+
+# Redirect para Netlify Identity después de login
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Redirect para manejar 404 en rutas dinámicas
+[[redirects]]
+  from = "/insights/*"
+  to = "/insights/[...slug]/index.html"
+  status = 200
+  force = false
+
+# =============================================================================
+# HEADERS DE SEGURIDAD
+# =============================================================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Headers específicos para el admin (permitir frames de Identity)
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+
+# =============================================================================
+# CACHE HEADERS
+# =============================================================================
+
+# Imágenes - cache largo
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Assets estáticos (CSS, JS hasheados)
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Fuentes
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML - sin cache (siempre fresco)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# =============================================================================
+# PLUGINS
+# =============================================================================
+
+# Sitemap automático (si usas @astrojs/sitemap)
+# [[plugins]]
+#   package = "@netlify/plugin-sitemap"
+
+# =============================================================================
+# FUNCIONES (para futuras integraciones)
+# =============================================================================
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# =============================================================================
+# FORMULARIOS
+# =============================================================================
+
+# Los formularios se detectan automáticamente con data-netlify="true"
+# Notificaciones: Netlify Dashboard > Forms > Form notifications

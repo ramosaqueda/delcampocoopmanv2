@@ -1,665 +1,495 @@
 <!DOCTYPE html>
 
 <html class="" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Del Campo Coopman - Landing Page</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#d4a411",
-              "primary-hover": "#b0880e",
-              "secondary-blue": "#0f3460",
-              "accent-silver": "#e2e8f0",
-              "background-light": "#f0f4f8",
-              "background-dark": "#012340", // Deep Corporate Blue
-              "surface-dark": "#022c50", // Slightly lighter blue for cards
-            },
-            fontFamily: {
-              display: ["Manrope", "sans-serif"],
-              serif: ["Cinzel", "serif"],
-            },
-            backgroundImage: {
-              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              "2xl": "1rem",
-              full: "9999px",
-            },
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Del Campo Coopman - Landing Page</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#d4a411",
+            "primary-hover": "#b0880e",
+            "secondary-blue": "#0f3460",
+            "accent-silver": "#e2e8f0",
+            "background-light": "#f0f4f8",
+            "background-dark": "#012340", // Deep Corporate Blue
+            "surface-dark": "#022c50", // Slightly lighter blue for cards
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+            serif: ["Cinzel", "serif"],
+          },
+          backgroundImage: {
+            "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            "2xl": "1rem",
+            full: "9999px",
           },
         },
-      };
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-      }
-      .glass-panel {
-        background: rgba(1, 35, 64, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .text-glow {
-        text-shadow: 0 0 20px rgba(212, 164, 17, 0.3);
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #012340;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #0f3460;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #d4a411;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden"
-  >
-    <header
-      class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 transition-all duration-300"
-    >
-      <div class="layout-container flex justify-center w-full">
-        <div
-          class="max-w-[1280px] w-full px-6 lg:px-10 h-20 flex items-center justify-between"
-        >
-          <div class="flex items-center gap-3 text-white group cursor-pointer">
-            <span class="material-symbols-outlined text-primary text-3xl"
-              >balance</span
-            >
-            <h2
-              class="font-serif text-xl md:text-2xl font-bold tracking-wide text-white group-hover:text-primary transition-colors"
-            >
-              Del Campo <span class="text-primary">&amp;</span> Coopman
-            </h2>
-          </div>
-          <nav class="hidden md:flex items-center gap-8">
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
-              href="#services"
-              >Servicios</a
-            >
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
-              href="#firm"
-              >La Firma</a
-            >
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
-              href="#insights"
-              >Insights</a
-            >
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
-              href="#contact"
-              >Contacto</a
-            >
-            <button
-              class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-primary-hover text-background-dark text-sm font-bold tracking-wide transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(212,164,17,0.3)]"
-            >
-              Agendar Consulta
-            </button>
-          </nav>
-          <button class="md:hidden text-white">
-            <span class="material-symbols-outlined text-3xl">menu</span>
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    }
+
+    .glass-panel {
+      background: rgba(1, 35, 64, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 20px rgba(212, 164, 17, 0.3);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #012340;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #0f3460;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4a411;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 transition-all duration-300">
+    <div class="layout-container flex justify-center w-full">
+      <div class="max-w-[1280px] w-full px-6 lg:px-10 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3 text-white group cursor-pointer">
+          <span class="material-symbols-outlined text-primary text-3xl">balance</span>
+          <h2
+            class="font-serif text-xl md:text-2xl font-bold tracking-wide text-white group-hover:text-primary transition-colors">
+            Del Campo <span class="text-primary">&amp;</span> Coopman
+          </h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
+            href="#services">Servicios</a>
+          <a class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
+            href="#firm">La Firma</a>
+          <a class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
+            href="#insights">Insights</a>
+          <a class="text-sm font-medium text-slate-300 hover:text-white hover:underline decoration-primary underline-offset-8 transition-all"
+            href="#contact">Contacto</a>
+          <button
+            class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-primary-hover text-background-dark text-sm font-bold tracking-wide transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(212,164,17,0.3)]">
+            Agendar Consulta
+          </button>
+        </nav>
+        <button class="md:hidden text-white">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="relative min-h-screen w-full flex items-center justify-center pt-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/60 to-background-dark z-10">
+      </div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 to-transparent z-10">
+      </div>
+      <div class="h-full w-full bg-cover bg-center bg-no-repeat opacity-50"
+        data-alt="Modern abstract office architecture with glass facades representing transparency and corporate structure"
+        style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbVUv2yhTvLIx8KzV1TTThrD9iz6mfdCDffJHQryeJ6utSbCacGlqRsj2WJCz14BKSvZxuaHIygKoB3pGURPSrZhYxGqSvlSl7cT_DYIfwNzacF0CEGGBrPgSBeQ_5ZITl5tw5X4Qd8CWNmvlKR1GoV609ZKcN0tweACPDFPpQQzenhSmEBPp8dgEqi6SPo-FSZaRwucWrO_hv9yGzRtt0ix-U6DYyl12SI6sooUimGDOcVjakqLqyL0cCUmHDjbVKZXc9_yxpvYng');
+          "></div>
+    </div>
+    <div
+      class="relative z-20 layout-container flex flex-col items-center justify-center w-full px-6 md:px-10 max-w-[1280px]">
+      <div
+        class="glass-panel p-8 md:p-12 rounded-2xl max-w-4xl w-full text-center border border-white/5 shadow-2xl backdrop-blur-xl">
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+          Boutique Legal &amp; Compliance
+        </span>
+        <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-glow">
+          Excelencia y <br />Prevención de Riesgos
+        </h1>
+        <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10">
+          Boutique legal especializada en Cumplimiento Normativo, Derecho
+          Penal y Civil. Protegemos el valor de su corporación con estrategias
+          jurídicas de alta precisión.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button
+            class="w-full sm:w-auto flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-background-dark text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-primary/40">
+            Agendar Consulta
+          </button>
+          <button
+            class="w-full sm:w-auto flex items-center justify-center rounded-lg h-12 px-8 bg-transparent border border-slate-500 hover:border-white text-white text-base font-medium transition-all hover:bg-white/5">
+            Conocer la Firma
           </button>
         </div>
       </div>
-    </header>
-    <section
-      class="relative min-h-screen w-full flex items-center justify-center pt-20 overflow-hidden"
-    >
-      <div class="absolute inset-0 z-0">
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/60 to-background-dark z-10"
-        ></div>
-        <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 to-transparent z-10"
-        ></div>
-        <div
-          class="h-full w-full bg-cover bg-center bg-no-repeat opacity-50"
-          data-alt="Modern abstract office architecture with glass facades representing transparency and corporate structure"
-          style="
-            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbVUv2yhTvLIx8KzV1TTThrD9iz6mfdCDffJHQryeJ6utSbCacGlqRsj2WJCz14BKSvZxuaHIygKoB3pGURPSrZhYxGqSvlSl7cT_DYIfwNzacF0CEGGBrPgSBeQ_5ZITl5tw5X4Qd8CWNmvlKR1GoV609ZKcN0tweACPDFPpQQzenhSmEBPp8dgEqi6SPo-FSZaRwucWrO_hv9yGzRtt0ix-U6DYyl12SI6sooUimGDOcVjakqLqyL0cCUmHDjbVKZXc9_yxpvYng');
-          "
-        ></div>
-      </div>
-      <div
-        class="relative z-20 layout-container flex flex-col items-center justify-center w-full px-6 md:px-10 max-w-[1280px]"
-      >
-        <div
-          class="glass-panel p-8 md:p-12 rounded-2xl max-w-4xl w-full text-center border border-white/5 shadow-2xl backdrop-blur-xl"
-        >
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest mb-6"
-          >
-            Boutique Legal &amp; Compliance
-          </span>
-          <h1
-            class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-glow"
-          >
-            Excelencia y <br />Prevención de Riesgos
-          </h1>
-          <p
-            class="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10"
-          >
-            Boutique legal especializada en Cumplimiento Normativo, Derecho
-            Penal y Civil. Protegemos el valor de su corporación con estrategias
-            jurídicas de alta precisión.
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-400">
+      <span class="material-symbols-outlined">keyboard_arrow_down</span>
+    </div>
+  </section>
+  <section class="relative py-24 bg-background-dark" id="services">
+    <div class="layout-container px-6 md:px-10 max-w-[1280px] mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="max-w-xl">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4 pl-4 border-l-4 border-primary">
+            Áreas de Práctica
+          </h2>
+          <p class="text-slate-400 text-lg">
+            Soluciones legales integrales diseñadas para entornos corporativos
+            complejos.
           </p>
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <button
-              class="w-full sm:w-auto flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-background-dark text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-primary/40"
-            >
-              Agendar Consulta
-            </button>
-            <button
-              class="w-full sm:w-auto flex items-center justify-center rounded-lg h-12 px-8 bg-transparent border border-slate-500 hover:border-white text-white text-base font-medium transition-all hover:bg-white/5"
-            >
-              Conocer la Firma
-            </button>
-          </div>
         </div>
+        <a class="hidden md:flex items-center gap-2 text-primary font-bold hover:text-white transition-colors group"
+          href="#">
+          Ver todos los servicios
+          <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+        </a>
       </div>
-      <div
-        class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-400"
-      >
-        <span class="material-symbols-outlined">keyboard_arrow_down</span>
-      </div>
-    </section>
-    <section class="relative py-24 bg-background-dark" id="services">
-      <div class="layout-container px-6 md:px-10 max-w-[1280px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         <div
-          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
-        >
-          <div class="max-w-xl">
-            <h2
-              class="font-serif text-3xl md:text-4xl font-bold text-white mb-4 pl-4 border-l-4 border-primary"
-            >
-              Áreas de Práctica
-            </h2>
-            <p class="text-slate-400 text-lg">
-              Soluciones legales integrales diseñadas para entornos corporativos
-              complejos.
+          class="group relative p-8 rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div
+              class="w-14 h-14 rounded-full bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors">
+              <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+              Compliance
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Diseño e implementación de modelos de prevención de delitos.
+              Gestión de riesgos y cumplimiento normativo corporativo bajo
+              estándares internacionales.
             </p>
+            <div
+              class="flex items-center text-accent-silver text-xs font-bold uppercase tracking-wider group-hover:text-primary transition-colors">
+              <span>Saber más</span>
+              <span class="material-symbols-outlined text-sm ml-2">arrow_right_alt</span>
+            </div>
           </div>
-          <a
-            class="hidden md:flex items-center gap-2 text-primary font-bold hover:text-white transition-colors group"
-            href="#"
-          >
-            Ver todos los servicios
-            <span
-              class="material-symbols-outlined transition-transform group-hover:translate-x-1"
-              >arrow_forward</span
-            >
-          </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div
+          class="group relative p-8 rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1">
           <div
-            class="group relative p-8 rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1"
-          >
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
             <div
-              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
-            ></div>
-            <div class="relative z-10 flex flex-col h-full">
-              <div
-                class="w-14 h-14 rounded-full bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary text-3xl"
-                  >verified_user</span
-                >
-              </div>
-              <h3
-                class="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
-              >
-                Compliance
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                Diseño e implementación de modelos de prevención de delitos.
-                Gestión de riesgos y cumplimiento normativo corporativo bajo
-                estándares internacionales.
-              </p>
-              <div
-                class="flex items-center text-accent-silver text-xs font-bold uppercase tracking-wider group-hover:text-primary transition-colors"
-              >
-                <span>Saber más</span>
-                <span class="material-symbols-outlined text-sm ml-2"
-                  >arrow_right_alt</span
-                >
-              </div>
+              class="w-14 h-14 rounded-full bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors">
+              <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+              Litigación Penal
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Defensa estratégica en procesos penales de alta complejidad y
+              delitos económicos. Representación robusta ante tribunales de
+              garantía y orales.
+            </p>
+            <div
+              class="flex items-center text-accent-silver text-xs font-bold uppercase tracking-wider group-hover:text-primary transition-colors">
+              <span>Saber más</span>
+              <span class="material-symbols-outlined text-sm ml-2">arrow_right_alt</span>
             </div>
           </div>
+        </div>
+        <div
+          class="group relative p-8 rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1">
           <div
-            class="group relative p-8 rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
-            ></div>
-            <div class="relative z-10 flex flex-col h-full">
-              <div
-                class="w-14 h-14 rounded-full bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary text-3xl"
-                  >gavel</span
-                >
-              </div>
-              <h3
-                class="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
-              >
-                Litigación Penal
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                Defensa estratégica en procesos penales de alta complejidad y
-                delitos económicos. Representación robusta ante tribunales de
-                garantía y orales.
-              </p>
-              <div
-                class="flex items-center text-accent-silver text-xs font-bold uppercase tracking-wider group-hover:text-primary transition-colors"
-              >
-                <span>Saber más</span>
-                <span class="material-symbols-outlined text-sm ml-2"
-                  >arrow_right_alt</span
-                >
-              </div>
-            </div>
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
           </div>
-          <div
-            class="group relative p-8 rounded-xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1"
-          >
+          <div class="relative z-10 flex flex-col h-full">
             <div
-              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
-            ></div>
-            <div class="relative z-10 flex flex-col h-full">
-              <div
-                class="w-14 h-14 rounded-full bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors"
-              >
-                <span class="material-symbols-outlined text-primary text-3xl"
-                  >account_balance</span
-                >
-              </div>
-              <h3
-                class="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
-              >
-                Derecho Civil
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                Asesoría experta en conflictos civiles, contractuales y
-                arbitrajes comerciales. Resolución de disputas con enfoque en la
-                protección patrimonial.
-              </p>
-              <div
-                class="flex items-center text-accent-silver text-xs font-bold uppercase tracking-wider group-hover:text-primary transition-colors"
-              >
-                <span>Saber más</span>
-                <span class="material-symbols-outlined text-sm ml-2"
-                  >arrow_right_alt</span
-                >
-              </div>
+              class="w-14 h-14 rounded-full bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors">
+              <span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+              Derecho Civil
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Asesoría experta en conflictos civiles, contractuales y
+              arbitrajes comerciales. Resolución de disputas con enfoque en la
+              protección patrimonial.
+            </p>
+            <div
+              class="flex items-center text-accent-silver text-xs font-bold uppercase tracking-wider group-hover:text-primary transition-colors">
+              <span>Saber más</span>
+              <span class="material-symbols-outlined text-sm ml-2">arrow_right_alt</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="relative py-20 overflow-hidden">
-      <div
-        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary-blue to-background-dark z-0"
-      ></div>
-      <div
-        class="absolute inset-0 opacity-10"
-        style="
+    </div>
+  </section>
+  <section class="relative py-20 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary-blue to-background-dark z-0">
+    </div>
+    <div class="absolute inset-0 opacity-10" style="
           background-image: radial-gradient(#ffffff 1px, transparent 1px);
           background-size: 30px 30px;
-        "
-      ></div>
-      <div
-        class="layout-container relative z-10 px-6 md:px-10 max-w-[1280px] mx-auto"
-      >
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          <div class="flex-1 space-y-8">
-            <div class="flex items-center gap-3 text-primary mb-2">
-              <span class="material-symbols-outlined">lock</span>
-              <span class="text-sm font-bold tracking-widest uppercase"
-                >Confidencialidad Garantizada</span
-              >
-            </div>
-            <h2
-              class="font-serif text-4xl lg:text-5xl font-bold text-white leading-tight"
-            >
-              Canal de Denuncias <br />
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white"
-                >Ley 20.393</span
-              >
-            </h2>
-            <p class="text-slate-300 text-lg leading-relaxed max-w-xl">
-              Nuestra "Bóveda de Seguridad" para reportes confidenciales.
-              Ofrecemos una plataforma encriptada que garantiza anonimato total
-              y robustez técnica en la gestión de denuncias corporativas.
-            </p>
-            <ul class="space-y-4 text-slate-400">
-              <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-sm"
-                  >check_circle</span
-                >
-                <span>Encriptación de extremo a extremo</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-sm"
-                  >check_circle</span
-                >
-                <span>Gestión anónima y trazable</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-sm"
-                  >check_circle</span
-                >
-                <span>Cumplimiento normativo integral</span>
-              </li>
-            </ul>
-            <div class="pt-4">
-              <button
-                class="flex items-center gap-3 rounded-lg h-12 px-8 bg-transparent border border-accent-silver text-white hover:bg-white hover:text-background-dark transition-all font-bold tracking-wide"
-              >
-                <span class="material-symbols-outlined">vpn_key</span>
-                Acceso Seguro
-              </button>
-            </div>
+        "></div>
+    <div class="layout-container relative z-10 px-6 md:px-10 max-w-[1280px] mx-auto">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="flex-1 space-y-8">
+          <div class="flex items-center gap-3 text-primary mb-2">
+            <span class="material-symbols-outlined">lock</span>
+            <span class="text-sm font-bold tracking-widest uppercase">Confidencialidad Garantizada</span>
           </div>
-          <div class="flex-1 w-full flex justify-center lg:justify-end">
-            <div class="relative w-full max-w-md aspect-square">
-              <div
-                class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"
-              ></div>
-              <div
-                class="relative h-full w-full rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md p-8 flex flex-col items-center justify-center text-center shadow-2xl"
-              >
-                <span
-                  class="material-symbols-outlined text-6xl text-primary mb-6"
-                  >shield_lock</span
-                >
-                <h3 class="text-white font-serif text-2xl font-bold mb-2">
-                  Secure Vault
-                </h3>
-                <p class="text-slate-400 text-sm mb-8">
-                  Acceso restringido solo para personal autorizado.
-                </p>
-                <div
-                  class="w-full bg-background-dark/50 rounded-lg p-4 border border-white/5 flex items-center justify-between mb-3"
-                >
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                    ></div>
-                    <span class="text-xs text-slate-300 font-mono"
-                      >System Online</span
-                    >
-                  </div>
-                  <span class="text-xs text-slate-500 font-mono">v.2.4.0</span>
-                </div>
-                <div
-                  class="w-full bg-background-dark/50 rounded-lg p-4 border border-white/5 flex items-center justify-between"
-                >
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="material-symbols-outlined text-slate-400 text-sm"
-                      >encrypted</span
-                    >
-                    <span class="text-xs text-slate-300 font-mono"
-                      >AES-256 Encryption</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="py-24 bg-background-dark relative" id="insights">
-      <div class="layout-container px-6 md:px-10 max-w-[1280px] mx-auto">
-        <div class="text-center mb-16">
-          <span
-            class="text-primary text-sm font-bold uppercase tracking-widest mb-2 block"
-            >Actualidad Jurídica</span
-          >
-          <h2 class="font-serif text-3xl md:text-5xl font-bold text-white">
-            Alertas Legales &amp; Insights
+          <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Canal de Denuncias <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Ley 20.393</span>
           </h2>
+          <p class="text-slate-300 text-lg leading-relaxed max-w-xl">
+            Nuestra "Bóveda de Seguridad" para reportes confidenciales.
+            Ofrecemos una plataforma encriptada que garantiza anonimato total
+            y robustez técnica en la gestión de denuncias corporativas.
+          </p>
+          <ul class="space-y-4 text-slate-400">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+              <span>Encriptación de extremo a extremo</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+              <span>Gestión anónima y trazable</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+              <span>Cumplimiento normativo integral</span>
+            </li>
+          </ul>
+          <div class="pt-4">
+            <button
+              class="flex items-center gap-3 rounded-lg h-12 px-8 bg-transparent border border-accent-silver text-white hover:bg-white hover:text-background-dark transition-all font-bold tracking-wide">
+              <span class="material-symbols-outlined">vpn_key</span>
+              Acceso Seguro
+            </button>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article
-            class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer"
-          >
-            <div class="p-8 flex flex-col h-full">
-              <div class="flex items-center justify-between mb-6">
-                <span
-                  class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase"
-                  >Laboral</span
-                >
-                <span class="text-slate-500 text-xs font-medium"
-                  >12 Oct, 2023</span
-                >
-              </div>
-              <h3
-                class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors"
-              >
-                Implementación Ley Karin: Desafíos para el compliance
-                corporativo
+        <div class="flex-1 w-full flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-md aspect-square">
+            <div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
+            <div
+              class="relative h-full w-full rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md p-8 flex flex-col items-center justify-center text-center shadow-2xl">
+              <span class="material-symbols-outlined text-6xl text-primary mb-6">shield_lock</span>
+              <h3 class="text-white font-serif text-2xl font-bold mb-2">
+                Secure Vault
               </h3>
-              <p
-                class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3"
-              >
-                Análisis detallado sobre las nuevas exigencias en materia de
-                prevención del acoso laboral y sexual en las empresas, y cómo
-                adaptar sus reglamentos internos.
+              <p class="text-slate-400 text-sm mb-8">
+                Acceso restringido solo para personal autorizado.
               </p>
               <div
-                class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
-              >
-                Leer análisis
+                class="w-full bg-background-dark/50 rounded-lg p-4 border border-white/5 flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <span class="text-xs text-slate-300 font-mono">System Online</span>
+                </div>
+                <span class="text-xs text-slate-500 font-mono">v.2.4.0</span>
               </div>
-            </div>
-          </article>
-          <article
-            class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer"
-          >
-            <div class="p-8 flex flex-col h-full">
-              <div class="flex items-center justify-between mb-6">
-                <span
-                  class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase"
-                  >Penal Económico</span
-                >
-                <span class="text-slate-500 text-xs font-medium"
-                  >28 Sep, 2023</span
-                >
-              </div>
-              <h3
-                class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors"
-              >
-                Ley de Delitos Económicos y Medioambientales
-              </h3>
-              <p
-                class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3"
-              >
-                Impacto de la sistematización de los delitos económicos en la
-                responsabilidad penal de las personas jurídicas y sus
-                directivos.
-              </p>
               <div
-                class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
-              >
-                Leer análisis
+                class="w-full bg-background-dark/50 rounded-lg p-4 border border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-slate-400 text-sm">encrypted</span>
+                  <span class="text-xs text-slate-300 font-mono">AES-256 Encryption</span>
+                </div>
               </div>
             </div>
-          </article>
-          <article
-            class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer"
-          >
-            <div class="p-8 flex flex-col h-full">
-              <div class="flex items-center justify-between mb-6">
-                <span
-                  class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase"
-                  >Regulatorio</span
-                >
-                <span class="text-slate-500 text-xs font-medium"
-                  >15 Sep, 2023</span
-                >
-              </div>
-              <h3
-                class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors"
-              >
-                Nuevas normativas FinTech en Chile
-              </h3>
-              <p
-                class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3"
-              >
-                Exploramos el marco regulatorio emergente para las empresas de
-                tecnología financiera y los requisitos de capital y gobernanza.
-              </p>
-              <div
-                class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4"
-              >
-                Leer análisis
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
-    </section>
-    <footer
-      class="bg-[#001529] border-t border-white/10 pt-16 pb-8"
-      id="contact"
-    >
-      <div class="layout-container px-6 md:px-10 max-w-[1280px] mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div class="col-span-1 md:col-span-1">
-            <div class="flex items-center gap-2 text-white mb-6">
-              <span class="material-symbols-outlined text-primary text-2xl"
-                >balance</span
-              >
-              <h2 class="font-serif text-lg font-bold">
-                Del Campo &amp; Coopman
-              </h2>
+    </div>
+  </section>
+  <section class="py-24 bg-background-dark relative" id="insights">
+    <div class="layout-container px-6 md:px-10 max-w-[1280px] mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-primary text-sm font-bold uppercase tracking-widest mb-2 block">Actualidad Jurídica</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-bold text-white">
+          Alertas Legales &amp; Insights
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article
+          class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer">
+          <div class="p-8 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">Laboral</span>
+              <span class="text-slate-500 text-xs font-medium">12 Oct, 2023</span>
             </div>
-            <p class="text-slate-400 text-sm mb-6">
-              Excelencia legal y compromiso ético en la defensa de sus intereses
-              corporativos.
+            <h3 class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
+              Implementación Ley Karin: Desafíos para el compliance
+              corporativo
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
+              Análisis detallado sobre las nuevas exigencias en materia de
+              prevención del acoso laboral y sexual en las empresas, y cómo
+              adaptar sus reglamentos internos.
             </p>
-            <div class="flex gap-4">
-              <a
-                class="text-slate-400 hover:text-primary transition-colors"
-                href="#"
-                ><span class="material-symbols-outlined">link</span></a
-              >
-              <a
-                class="text-slate-400 hover:text-primary transition-colors"
-                href="#"
-                ><span class="material-symbols-outlined">mail</span></a
-              >
+            <div
+              class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4">
+              Leer análisis
             </div>
           </div>
-          <div>
-            <h4 class="text-white font-serif font-bold mb-6">Navegación</h4>
-            <ul class="space-y-3 text-sm text-slate-400">
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >La Firma</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >Áreas de Práctica</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >Equipo</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >Insights</a
-                >
-              </li>
-            </ul>
+        </article>
+        <article
+          class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer">
+          <div class="p-8 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">Penal
+                Económico</span>
+              <span class="text-slate-500 text-xs font-medium">28 Sep, 2023</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
+              Ley de Delitos Económicos y Medioambientales
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
+              Impacto de la sistematización de los delitos económicos en la
+              responsabilidad penal de las personas jurídicas y sus
+              directivos.
+            </p>
+            <div
+              class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4">
+              Leer análisis
+            </div>
           </div>
-          <div>
-            <h4 class="text-white font-serif font-bold mb-6">Legal</h4>
-            <ul class="space-y-3 text-sm text-slate-400">
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >Términos de Uso</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >Política de Privacidad</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-primary transition-colors" href="#"
-                  >Canal de Denuncias</a
-                >
-              </li>
-            </ul>
+        </article>
+        <article
+          class="flex flex-col h-full bg-surface-dark border border-white/5 rounded-lg overflow-hidden hover:border-primary/30 transition-colors group cursor-pointer">
+          <div class="p-8 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-6">
+              <span
+                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">Regulatorio</span>
+              <span class="text-slate-500 text-xs font-medium">15 Sep, 2023</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
+              Nuevas normativas FinTech en Chile
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">
+              Exploramos el marco regulatorio emergente para las empresas de
+              tecnología financiera y los requisitos de capital y gobernanza.
+            </p>
+            <div
+              class="mt-auto flex items-center text-white text-sm font-bold group-hover:underline decoration-primary underline-offset-4">
+              Leer análisis
+            </div>
           </div>
-          <div>
-            <h4 class="text-white font-serif font-bold mb-6">Contacto</h4>
-            <ul class="space-y-3 text-sm text-slate-400">
-              <li class="flex items-start gap-3">
-                <span
-                  class="material-symbols-outlined text-primary text-xs mt-1"
-                  >location_on</span
-                >
-                <span>Av. El Golf 150, Piso 18<br />Las Condes, Santiago</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-xs"
-                  >call</span
-                >
-                <span>+56 2 2345 6789</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-xs"
-                  >mail</span
-                >
-                <span>contacto@delcampocoopman.cl</span>
-              </li>
-            </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-[#001529] border-t border-white/10 pt-16 pb-8" id="contact">
+    <div class="layout-container px-6 md:px-10 max-w-[1280px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center gap-2 text-white mb-6">
+            <span class="material-symbols-outlined text-primary text-2xl">balance</span>
+            <h2 class="font-serif text-lg font-bold">
+              Del Campo &amp; Coopman
+            </h2>
+          </div>
+          <p class="text-slate-400 text-sm mb-6">
+            Excelencia legal y compromiso ético en la defensa de sus intereses
+            corporativos.
+          </p>
+          <div class="flex gap-4">
+            <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                class="material-symbols-outlined">link</span></a>
+            <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                class="material-symbols-outlined">mail</span></a>
           </div>
         </div>
-        <div
-          class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500"
-        >
-          <p>© 2023 Del Campo &amp; Coopman. Todos los derechos reservados.</p>
-          <p>Designed with Luxury Dark Mode</p>
+        <div>
+          <h4 class="text-white font-serif font-bold mb-6">Navegación</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">La Firma</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Áreas de Práctica</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Equipo</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Insights</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-serif font-bold mb-6">Legal</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Términos de Uso</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Canal de Denuncias</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-serif font-bold mb-6">Contacto</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-xs mt-1">location_on</span>
+              <span>Huanhuali 565<br />La Serena</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xs">call</span>
+              <span>+56 9 9768 4860</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xs">mail</span>
+              <span>contacto@delcampocoopman.cl</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
-  </body>
+      <div
+        class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>© 2023 Del Campo &amp; Coopman. Todos los derechos reservados.</p>
+        <p>Designed with Luxury Dark Mode</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
